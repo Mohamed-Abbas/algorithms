@@ -28,4 +28,4 @@ function baseballGame(operations = []) {
   );
 }
 
-console.log(BaseballGame(["5", "2", "C", "D", "+"]));
+console.log(baseballGame(["5", "2", "C", "D", "+"]));
