@@ -14,19 +14,15 @@ const nodeFive = new Node(15);
 const nodeSix = new Node(1);
 
 nodeOne.left = nodeTwo;
-nodeOne.right = nodeThree;
 nodeTwo.left = nodeFour;
-nodeTwo.right = nodeFive;
-nodeFive.right = nodeSix;
 
 export default function maxRootToLeafPathSum(root) {
-  if (root === null) return -Infinity;
-  if (!root.left && !root.right) return root.val;
+  if (root === null) return -1;
 
-  const leftTreeMaxSum = maxRootToLeafPathSum(root.left);
-  const rightTreeMaxSum = maxRootToLeafPathSum(root.right);
+  const s = maxRootToLeafPathSum(root.left);
+  const x = maxRootToLeafPathSum(root.right);
 
-  return root.val + Math.max(leftTreeMaxSum, rightTreeMaxSum);
+  return Math.max(s, x) + 1;
 }
 
 console.log(maxRootToLeafPathSum(nodeOne));
