@@ -5,6 +5,7 @@ class Node {
   }
 }
 
+// Converting a linked list to an array is a task that might be used to simplify other algorithms.
 // 🔀 Expanding on the iterating pattern, we can now append the current node's value to an array.
 
 export default function linkedListToArray(head) {
