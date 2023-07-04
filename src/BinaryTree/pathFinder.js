@@ -8,7 +8,7 @@ class Node {
 
 /**
  * Given a binary tree and a target value, return an array with the path from the root to the target.
- * Time Complexity: O(n).
+ * Time Complexity: O(n^2).
  * Space Complexity: O(n).
  */
 
