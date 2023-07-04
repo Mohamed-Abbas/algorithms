@@ -12,27 +12,22 @@ class Node {
  * Space Complexity: O(n).
  */
 
-export default function pathFinder(root, target, path = []) {
+export default function pathFinder(root, target) {
   if (root === null) return null; // Default value for an empty node.
-  if (root.val === target) {
-    path.push(root.val);
-    return path;
-  }
+  if (root.val === target) return [target];
 
   // Search for target in left and right subtrees.
-  const leftPath = pathFinder(root.left, target, path);
-  const rightPath = pathFinder(root.right, target, path);
+  const leftPath = pathFinder(root.left, target);
+  const rightPath = pathFinder(root.right, target);
 
-  // If target is found in left, add the current node value to the path.
+  // If target is found in  left, add the current node value to the path.
   if (leftPath) {
-    path.unshift(root.val);
-    return path;
+    return [root.val, ...leftPath];
   }
 
   // If target is found in right, add the current node value to the path.
   if (rightPath) {
-    path.unshift(root.val);
-    return path;
+    return [root.val, ...rightPath];
   }
 
   // If target is not found in left or right, return null.
